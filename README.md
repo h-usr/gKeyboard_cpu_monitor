@@ -15,7 +15,7 @@ python3 gkb_cpu_monitor.py [-notify] [-persistent] [-verbose]
  - [-persistent] Will not stop the script if the keyboard is disconnected or the communication fails<br/>
  - [-verbose] Will print RGB values and active notifications; intended only for debug purposes<br/>
 
-# notifications.xml format
+# 'notifications.xml' format
 To set LED color and blinking specifics for each notification, the file should look something like this:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -35,5 +35,14 @@ To set LED color and blinking specifics for each notification, the file should l
 </notifications>
 ```
 Color is in RGB format and duration of blinks is expressed in seconds.
+
+# Dependencies
+Python 3 modules (install via pip):
+* PyGObject==3.36.0
+* dbus_python==1.2.16
+* psutil==5.8.0
+
+Additional software:<br/>
+https://github.com/MatMoul/g810-led for sending commands to keyboard
 
 __Hope you like it! Please leave feedback!__
