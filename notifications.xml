@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notifications>
+	<notification>
+    	<name>Telegram Desktop</name>
+    	<color>0,190,255</color>
+    	<count>2</count>
+    	<interval>0.3</interval>
+	</notification>
+	<notification>
+    	<name>Spotify</name>
+    	<color>255,255,255</color>
+    	<count>1</count>
+    	<interval>0.2</interval>
+	</notification>
+</notifications>
+
