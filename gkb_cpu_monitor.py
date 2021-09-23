@@ -60,9 +60,9 @@ def set_keyboard_color(rgb, ignore_errors=0):
     Calls g810-led with rgb values as argument
     If an error occurs, gives warning and stops script
     """
-    color_string="" #String used by g810-led to set color
+    color_string = "" #String used by g810-led to set color
     for color in rgb:
-        color_string+=int_to_hexstring(limit(0, 255, color))
+        color_string += int_to_hexstring(limit(0, 255, color))
     try:
         subprocess.check_output(["g810-led", "-a", color_string])
     except FileNotFoundError:
@@ -91,7 +91,7 @@ def notification_event(bus, message):
     Updates the 'NOTIFY' global variable with last notification name
     """
     global NOTIFY
-    NOTIFY=message.get_args_list()[0]
+    NOTIFY = message.get_args_list()[0]
 
 def notification_scanner():
     """
@@ -173,10 +173,10 @@ if __name__ == "__main__":
             exit()
     #Main loop
     while True:    
-        if NOTIFY=="": #If no notification present, sets color based on CPU load
+        if NOTIFY == "": #If no notification present, sets color based on CPU load
             #Updates CPU load cache
             cpu_load_cache[current_sampling] = (int(psutil.cpu_percent()))
-            current_sampling+=1
+            current_sampling += 1
             if current_sampling >= len(cpu_load_cache):
                 current_sampling = 0
             #Gets current load (average from cache) and corresponding RGB value
@@ -199,4 +199,4 @@ if __name__ == "__main__":
                 if NOTIFY==notification["name"]:
                     notification_blink(notification["color"], meter_color,notification["count"], notification["interval"])
                     break
-            NOTIFY="" #Empties last notification name variable       
+            NOTIFY = "" #Empties last notification name variable       
