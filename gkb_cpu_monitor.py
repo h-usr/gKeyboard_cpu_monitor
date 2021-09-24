@@ -145,7 +145,7 @@ def parse_notification_settings_from_xml(path):
             if not (attribute in notification_settings_object):
                 raise ValueError("Missing element in notification settings XML: " + attribute)
         #Appends checked element to notification settings list
-        out_list.append(notification_settings_object.copy())
+        out_list.append(notification_settings_object)
     #Returns filled list    
     return out_list
     
